@@ -1,0 +1,47 @@
+version: '2.3'
+services:
+  nginx:
+    image: nginx:1.13.7
+    container_name: lemp-nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/conf/:/etc/nginx/:ro
+      - ./nginx/site/:/usr/share/nginx/html/
+      - ./nginx/log/:/var/log/nginx/
+    depends_on:
+      - phpfpm
+    networks:
+      - lemp-network
+
+  phpfpm:
+    image: blacksource/php7-fpm
+    container_name: lemp-phpfpm
+    expose:
+      - "9000"
+    volumes:
+      - ./phpfpm/conf/fpm/php.ini:/etc/php/7.0/fpm/php.ini
+      - ./phpfpm/conf/fpm/php-fpm.conf:/etc/php/7.0/fpm/php-fpm.conf
+      - ./phpfpm/conf/cli/php.ini:/etc/php/7.0/cli/php.ini
+      - ./nginx/site/:/usr/share/nginx/html
+    networks:
+      - lemp-network
+
+  mysql:
+    image: mariadb
+    container_name: lemp-mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: mysql
+      MYSQL_ROOT_PASSWORD: admin
+    volumes:
+      - ./mysql/storage:/docker-entrypoint-initdb.d
+    networks:
+      - lemp-network
+
+networks:
+  lemp-network:
+    driver: bridge
+    ipam:
+      driver: default
