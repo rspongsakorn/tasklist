@@ -13,7 +13,7 @@ docker-compose up -d
 
 Swagger: http://localhost/tasktodo/swagger
 
-phpmyadmin: http://localhost/phpmyadmin
+phpmyadmin: http://localhost/phpMyAdmin
 
 unit testing: http://localhost/tasktodo/index.php/unittest
 
