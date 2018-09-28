@@ -1,8 +1,9 @@
 # TODO Task list API
 
-Implemented by Codeigniter PHP framework
-(Please navigate to folder nginx/site/tasktodo for the project folder)
+Implemented by Codeigniter PHP framework (Please navigate to folder nginx/site/tasktodo for the project folder)
+
 Controller - nginx/site/tasktodo/application/controllers/Task.php
+
 Model - nginx/site/tasktodo/application/models/Task_model.php
 
 ## Setup
