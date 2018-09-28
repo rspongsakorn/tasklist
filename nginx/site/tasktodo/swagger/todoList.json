@@ -8,7 +8,7 @@
       "email": "rs.pongsakorn@gmail.com"
     }
   },
-  "host": "192.168.99.100",
+  "host": "localhost",
   "basePath": "/tasktodo/index.php",
   "consumes": [
     "multipart/form-data"
