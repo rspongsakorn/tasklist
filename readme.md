@@ -17,7 +17,7 @@ docker-compose up -d
 
 API Document(Swagger): http://localhost/tasktodo/swagger  (nginx/site/tasktodo/swagger)
 
-phpmyadmin: http://localhost/phpMyAdmin (nginx/site/phpMyAdmin)
+phpmyadmin: http://localhost/phpMyAdmin (nginx/site/phpMyAdmin) database.table => (mysql.tasks)
 
 unit testing: http://localhost/tasktodo/index.php/unittest (nginx/site/tasktodo/application/controllers/Unittest.php)
 
